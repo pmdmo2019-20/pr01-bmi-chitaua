@@ -6,8 +6,73 @@
     android:layout_height="match_parent"
     android:background="@drawable/main_activity_background"
     android:orientation="vertical"
-    tools:context=".ui.main.MainActivity">
+    tools:context=".ui.main.MainActivity"
+    android:padding="@dimen/normal_dimen">
 
-    <!-- TODO -->
+
+    <TextView
+        android:id="@+id/lblWeight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/weight" />
+
+    <EditText
+        android:id="@+id/txtWeight"
+        android:focusable="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:hint="@string/kgHint"
+        android:importantForAutofill="no" />
+
+    <TextView
+        android:id="@+id/lblHeight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/height" />
+
+    <EditText
+        android:id="@+id/txtHeight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:hint="@string/mHint"
+        android:importantForAutofill="no" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btnReset"
+            android:layout_width="@dimen/no_width"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="@string/reset"
+            tools:ignore="ButtonStyle" />
+
+        <Button
+            android:id="@+id/btnCalculate"
+            android:layout_width="@dimen/no_width"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="@string/calculate_bmi"
+            tools:ignore="ButtonStyle" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/lblResult"
+        android:textColor="@color/black"
+        android:paddingTop="@dimen/normal_dimen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"/>
+
+    <ImageView
+        android:id="@+id/imgBmi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/bmi"
+        android:contentDescription="@string/imagen_bmi" />
 
 </LinearLayout>
