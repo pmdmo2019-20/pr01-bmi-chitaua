@@ -33,17 +33,17 @@ public class MainActivityTest {
 
     @Test
     public void should_txtWeight_show_error_when_not_float() {
-        onView(withId(R.id.txtWeight))
+        onView(withId(R.id.lblWeight))
             .perform(typeText(""), closeSoftKeyboard());
         onView(withId(R.id.btnCalculate)).perform(click());
 
-        onView(withId(R.id.txtWeight))
+        onView(withId(R.id.lblWeight))
             .check(matches(hasErrorText(activityRule.getActivity().getString(R.string.main_invalid_weight))));
     }
 
     @Test
     public void should_txtHeight_show_error_when_not_float() {
-        onView(withId(R.id.txtWeight))
+        onView(withId(R.id.lblWeight))
             .perform(typeText("100"), closeSoftKeyboard());
         onView(withId(R.id.txtHeight))
             .perform(typeText(""), closeSoftKeyboard());
@@ -55,19 +55,19 @@ public class MainActivityTest {
 
     @Test
     public void should_txtWeight_show_error_when_0() {
-        onView(withId(R.id.txtWeight))
+        onView(withId(R.id.lblWeight))
             .perform(typeText("0"), closeSoftKeyboard());
         onView(withId(R.id.txtHeight))
             .perform(typeText("2"), closeSoftKeyboard());
         onView(withId(R.id.btnCalculate)).perform(click());
 
-        onView(withId(R.id.txtWeight))
+        onView(withId(R.id.lblWeight))
             .check(matches(hasErrorText(activityRule.getActivity().getString(R.string.main_invalid_weight))));
     }
 
     @Test
     public void should_txtHeight_show_error_when_0() {
-        onView(withId(R.id.txtWeight))
+        onView(withId(R.id.lblWeight))
             .perform(typeText("100"), closeSoftKeyboard());
         onView(withId(R.id.txtHeight))
             .perform(typeText("0"), closeSoftKeyboard());
@@ -81,7 +81,7 @@ public class MainActivityTest {
 
     @Test
     public void should_btnReset_reset() {
-        onView(withId(R.id.txtWeight))
+        onView(withId(R.id.lblWeight))
             .perform(typeText("100"), closeSoftKeyboard());
         onView(withId(R.id.txtHeight))
             .perform(typeText("2"), closeSoftKeyboard());
@@ -90,7 +90,7 @@ public class MainActivityTest {
 
         onView(withId(R.id.txtHeight))
             .check(matches(withText("")));
-        onView(withId(R.id.txtWeight))
+        onView(withId(R.id.lblWeight))
             .check(matches(withText("")));
         onView(withId(R.id.lblResult))
             .check(matches(withText("")));
@@ -102,7 +102,7 @@ public class MainActivityTest {
 
     @Test
     public void should_btnCalculate_show_bmi() {
-        onView(withId(R.id.txtWeight))
+        onView(withId(R.id.lblWeight))
             .perform(typeText("100"), closeSoftKeyboard());
         onView(withId(R.id.txtHeight))
             .perform(typeText("2"), closeSoftKeyboard());
@@ -121,10 +121,10 @@ public class MainActivityTest {
     public void should_focus_flow_work() {
 
         // Initial focus.
-        onView(withId(R.id.txtWeight))
+        onView(withId(R.id.lblWeight))
             .check(matches(hasFocus()));
 
-        onView(withId(R.id.txtWeight)).perform(click(), pressImeActionButton());
+        onView(withId(R.id.lblWeight)).perform(click(), pressImeActionButton());
         onView(withId(R.id.txtHeight))
             .check(matches(hasFocus()));
 
@@ -134,7 +134,7 @@ public class MainActivityTest {
 
     @Test
     public void should_have_correct_initial_state() {
-        onView(withId(R.id.txtWeight))
+        onView(withId(R.id.lblWeight))
             .check(matches(withText("")));
         onView(withId(R.id.txtHeight))
             .check(matches(withText("")));
